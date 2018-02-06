@@ -1,18 +1,30 @@
 import * as types from '../constants/ActionTypes';
 import axios from 'axios';
 
-const storeRandomGifs = (gifs) => {
+const storeGifs = (gifs) => {
     return {
-        type: types.LOAD_RANDOM_GIFS,
+        type: types.STORE_GIFS,
         data: gifs.data.data
     }
 };
 
-export const loadRandomGifs = () => {
+export const loadRandomGifs = (count) => {
     return (dispatch) => {
-        return axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=jJ20VNa6Ah6L2rJwkQb6LS71TM6zbmVj&limit=25&rating=G`)
+        return axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=jJ20VNa6Ah6L2rJwkQb6LS71TM6zbmVj&limit=${count}&rating=G`)
             .then((response) => {
-                dispatch(storeRandomGifs(response));
+                dispatch(storeGifs(response));
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+};
+
+export const searchGifs = (query, count, offset) => {
+    return (dispatch) => {
+        return axios.get(`https://api.giphy.com/v1/gifs/search?api_key=jJ20VNa6Ah6L2rJwkQb6LS71TM6zbmVj&q=${query}&limit=${count}&offset=${offset}&rating=G&lang=en`)
+            .then((response) => {
+                dispatch(storeGifs(response));
             })
             .catch((error) => {
                 console.log(error);

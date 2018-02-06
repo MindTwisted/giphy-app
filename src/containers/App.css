@@ -5,3 +5,7 @@
 .App__gifItem {
     margin-bottom: 1.5rem;
 }
+
+.App__notFound {
+    text-align: center;
+}

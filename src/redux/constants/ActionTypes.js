@@ -1,1 +1,1 @@
-export const LOAD_RANDOM_GIFS = 'LOAD_RANDOM_GIFS';
+export const STORE_GIFS = 'STORE_GIFS';

@@ -12,8 +12,18 @@ import GifItem from '../components/GifItem';
 import * as GifsActions from '../redux/actions';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.searchGifs = this.searchGifs.bind(this);
+    }
+
     componentDidMount() {
-        this.props.actions.loadRandomGifs();
+        this.props.actions.loadRandomGifs(25);
+    }
+
+    searchGifs(query) {
+        this.props.actions.searchGifs(query, 25, 0);
     }
 
     render() {
@@ -45,7 +55,7 @@ class App extends Component {
                         </Col>
                         <Col md="9">
 
-                            <SearchBox/>
+                            <SearchBox searchGifs={this.searchGifs}/>
 
                         </Col>
                     </Row>
@@ -54,7 +64,13 @@ class App extends Component {
 
                             <div className="App__content">
                                 <Row>
-                                    {gifs.length > 0 ? renderGifs() : null}
+                                    {
+                                        gifs.length > 0 ?
+                                            renderGifs() :
+                                            <div className="col-md-12 App__notFound">
+                                                Not Found
+                                            </div>
+                                    }
                                 </Row>
                             </div>
 
