@@ -1,0 +1,26 @@
+.Logo {
+    display: flex;
+    align-items: center;
+}
+
+.Logo__image {
+    width: 4rem;
+    height: 4rem;
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(90deg);
+    }
+    100% {
+        transform: rotateZ(180deg);
+    }
+}

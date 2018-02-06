@@ -1,0 +1,1 @@
+export const LOAD_RANDOM_GIFS = 'LOAD_RANDOM_GIFS';
