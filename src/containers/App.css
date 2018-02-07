@@ -1,11 +1,49 @@
-.App__content {
+.App {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.App__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.App__logo {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+.App__searchBox {
+    flex-grow: 2;
+}
+
+.App__body {
     margin-top: 3rem;
 }
 
+.App__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .App__gifItem {
-    margin-bottom: 1.5rem;
+    min-width: 300px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 .App__notFound {
     text-align: center;
+}
+
+.App__singleGif {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
 }

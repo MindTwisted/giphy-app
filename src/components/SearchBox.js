@@ -17,7 +17,7 @@ class SearchBox extends Component {
     render() {
         return (
             <div className="SearchBox">
-                <DebounceInput className="form-control"
+                <DebounceInput className="SearchBox__input"
                                placeholder="Search"
                                minLength={2}
                                debounceTimeout={1000}

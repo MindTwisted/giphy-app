@@ -13,6 +13,10 @@
     animation-timing-function: linear;
 }
 
+.Logo__text {
+    font-size: 1.5rem;
+}
+
 @keyframes spin {
     0% {
         transform: rotateZ(0);

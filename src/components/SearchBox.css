@@ -1,3 +1,13 @@
-.SearchBox {
-    margin-top: 1rem;
+.SearchBox__input {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 6px;
+    padding: 1rem;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.25s ease;
+}
+
+.SearchBox__input:focus {
+    box-shadow: 0 0 5px rgba(56, 198, 218, 0.75);
 }

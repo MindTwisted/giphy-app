@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
-import {Container, Row, Col} from 'reactstrap';
 import {TransitionGroup} from 'react-transition-group';
 import Waypoint from 'react-waypoint';
 
@@ -84,7 +83,7 @@ class App extends Component {
             return gifs.map((gif) => {
                 return (
                     <Fade key={gif.id}>
-                        <div className="App__gifItem col-md-3">
+                        <div className="App__gifItem">
                             <GifItem title={gif.title}
                                      url={gif.url}
                                      imageUrl={gif.images.fixed_width.url}/>
@@ -114,39 +113,31 @@ class App extends Component {
 
         return (
             <div className="App">
-                <Container>
-                    <Row>
-                        <Col md="3">
+                <div className="App__header">
 
-                            <Logo text="Giphy App"/>
+                    <div className="App__logo">
+                        <Logo text="Giphy App"/>
+                    </div>
 
-                        </Col>
-                        <Col md="9">
+                    <div className="App__searchBox">
+                        <SearchBox searchGifs={this.searchGifs}/>
+                    </div>
 
-                            <SearchBox searchGifs={this.searchGifs}/>
+                </div>
 
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={12}>
+                <div className="App__body">
+                    {
+                        gifs.length > 0 ?
+                            <TransitionGroup className="App__content">
+                                {renderGifs()}
 
-                            <div className="App__content">
-                                {
-                                    gifs.length > 0 ?
-                                        <TransitionGroup className="row">
-                                            {renderGifs()}
-
-                                            <Waypoint onEnter={this.loadMoreGifs}/>
-                                        </TransitionGroup> :
-                                        <div className="col-md-12">
-                                            {gifs.singleGif ? renderSingleGif() : renderNotFound()}
-                                        </div>
-                                }
+                                <Waypoint onEnter={this.loadMoreGifs}/>
+                            </TransitionGroup> :
+                            <div>
+                                {gifs.singleGif ? renderSingleGif() : renderNotFound()}
                             </div>
-
-                        </Col>
-                    </Row>
-                </Container>
+                    }
+                </div>
             </div>
         );
     }

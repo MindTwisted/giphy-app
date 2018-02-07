@@ -1,25 +1,21 @@
 import React from 'react';
-import {
-    Card, CardImg, CardBody, CardTitle
-} from 'reactstrap';
+
+import './GifItem.css';
 
 const GifItem = (props) => {
     return (
         <div className="GifItem">
-            <Card>
-                <CardImg top
-                         width="100%"
-                         src={props.imageUrl}
-                         alt={props.title}/>
-                <CardBody>
-                    <CardTitle>{props.title}</CardTitle>
-                    <a href={props.url}
-                       target="_blank"
-                       className="btn btn-primary">
-                        View
-                    </a>
-                </CardBody>
-            </Card>
+            <div className="GifItem__image">
+                <img src={props.imageUrl}
+                     alt={props.title}/>
+            </div>
+            <div className="GifItem__body">
+                <a href={props.url}
+                   target="_blank"
+                   className="GifItem__title">
+                    {props.title}
+                </a>
+            </div>
         </div>
     )
 };

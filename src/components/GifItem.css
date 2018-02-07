@@ -1,0 +1,21 @@
+.GifItem {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.GifItem__image img {
+    width: 100%;
+}
+
+.GifItem__title {
+    display: block;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.GifItem__title:hover {
+    text-decoration: underline;
+}
