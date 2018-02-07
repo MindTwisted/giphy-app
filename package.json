@@ -1,9 +1,11 @@
 {
   "name": "giphy-app",
+  "homepage": "https://mindtwisted.github.io/giphy-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "gh-pages": "^1.1.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
@@ -17,6 +19,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
