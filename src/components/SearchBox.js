@@ -20,7 +20,7 @@ class SearchBox extends Component {
                 <DebounceInput className="form-control"
                                placeholder="Search"
                                minLength={2}
-                               debounceTimeout={300}
+                               debounceTimeout={1000}
                                onChange={this.handleChange}/>
             </div>
         )
