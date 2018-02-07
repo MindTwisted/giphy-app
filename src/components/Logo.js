@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import logo from '../static/images/logo.svg';
+
 import './Logo.css';
 
 const Logo = (props) => {
@@ -16,6 +19,10 @@ const Logo = (props) => {
 
         </div>
     )
+};
+
+Logo.propTypes = {
+    text: PropTypes.string.isRequired
 };
 
 export default Logo;

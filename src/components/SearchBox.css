@@ -9,5 +9,5 @@
 }
 
 .SearchBox__input:focus {
-    box-shadow: 0 0 5px rgba(56, 198, 218, 0.75);
+    box-shadow: 0 0 5px rgba(56, 198, 218, 0.85);
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './GifItem.css';
 
@@ -18,6 +19,16 @@ const GifItem = (props) => {
             </div>
         </div>
     )
+};
+
+GifItem.defaultProps = {
+    title: 'Some gif ;)'
+};
+
+GifItem.propTypes = {
+    imageUrl: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
 };
 
 export default GifItem;
